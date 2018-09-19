@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "v-like": "/components/like/like",
+    "v-movie": "/components/movie/movie",
+    "v-essay": "/components/essay/essay",
+    "v-music": "/components/music/music",
+    "v-navi": "/components/navi/navi"
+  }
+}

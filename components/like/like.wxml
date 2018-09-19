@@ -1,0 +1,23 @@
+<!--components/index/index.wxml-->
+<view class="header">
+
+<view class="container">
+<view class="index-container">
+  <text class="plain">No.</text>
+  <text class="index">{{_index}}</text>
+  <view class="line"></view>
+</view>
+<view class="dateContainer">
+     <text class="month">{{newMonth}}</text>
+     <text class="year">{{year}}</text>
+</view>
+</view>
+
+<view class="shareContainer">
+<view class="shareImg"  bindtap="catchLike">
+     <image src="{{like?likeSrc:nolikeSrc}}"></image>
+     <text>{{count}}</text>
+</view>
+    <image src="./images/分享@2x.png" bindtap="share" ></image>  
+</view>
+</view>

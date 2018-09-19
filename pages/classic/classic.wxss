@@ -1,0 +1,12 @@
+.container{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.like{
+  width:100%;
+}
+.navi{
+  position: absolute;
+  bottom:40rpx;
+}

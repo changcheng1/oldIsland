@@ -1,0 +1,60 @@
+.header{
+  display:flex;
+  justify-content: space-between;
+  padding:20rpx 0rpx;
+}
+.container{
+  height:60rpx;
+  display:inline-flex;
+  flex-direction: row;
+} 
+.plain{
+  font-size:30rpx;
+} 
+.month{
+  font-size:24rpx;
+  line-height:24rpx;
+}
+.shareContainer{
+  padding-right:40rpx;
+  height:70rpx;
+  line-height:70rpx;
+}
+.index{
+  font-size:60rpx;
+  line-height:60rpx;
+  font-weight:800;
+  margin-right:14rpx;
+}
+.line{
+  height:44rpx;
+  margin-right: 14rpx;
+  border-left:1px solid black;
+}
+.index-container{
+  display: flex;
+  flex-direction: row;
+  align-items:baseline;
+}
+.dateContainer{
+   display:flex;
+   flex-direction: column;
+   height:60rpx;
+   margin-top:5rpx;
+}
+.year{
+  font-size:20rpx;
+}
+.shareImg{
+  display:inline-block;
+  padding-right:40rpx;
+}
+
+.shareImg text{
+  position: relative;
+  bottom:20rpx;
+}
+.shareContainer image{
+  width:32rpx;
+  height:28rpx;
+}

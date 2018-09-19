@@ -1,0 +1,5 @@
+<view class="Container" hidden="{{hidden}}">
+  <image src="{{bgImage}}" class="bgImage"></image>
+  <image src="./images/诗句.png" class="tag"></image>
+  <text class="content">{{content}}</text>
+</view>

@@ -1,0 +1,23 @@
+.Container{
+  display: -webkit-flex;
+}
+.Container{
+  display:inline-flex;
+  flex-direction:column;
+  align-items: center;
+}
+.bgImage{
+  width:750rpx;
+  height:500rpx;
+}
+.tag{
+  width:46rpx;
+  height:142rpx;
+  position: relative;
+  right:310rpx;
+  bottom:58rpx;
+}
+.content{
+  max-width:550rpx;
+  font-size:36rpx;
+}
