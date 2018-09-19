@@ -1,10 +1,8 @@
 .Container{
-  display: -webkit-flex;
-}
-.Container{
   display:inline-flex;
   flex-direction:column;
   align-items: center;
+  width:750rpx;
 }
 .bgImage{
   width:750rpx;

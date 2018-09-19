@@ -4,7 +4,7 @@
   <!-- 电影组件 --> 
   <v-movie hidden= "{{classicData.type != '100'}}" bgImage="{{classicData.image}}" content="{{classicData.content}}"/>
   <!-- 音乐组件 -->
-   <v-music hidden="{{classicData.type != '200'}}"  bgImage="{{classicData.image}}" content="{{classicData.content}}" />
+   <v-music hidden="{{classicData.type != '200'}}"  bgImage="{{classicData.image}}" content="{{classicData.content}}" src="{{classicData.url}}"/>
    <!-- 句子组件 -->
   <v-essay hidden= "{{classicData.type != '300'}}" bgImage="{{classicData.image}}" content="{{classicData.content}}" />
    <!-- 底部导航组件  -->
