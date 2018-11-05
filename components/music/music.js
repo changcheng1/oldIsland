@@ -18,13 +18,13 @@ Component({
     playing:false
   },
   attached:function(event){
-    console.log(backgroundAudioManager.src)
+    this._resertStatus()
   },
   /**
    * 组件的方法列表
    */
   methods: {
-    playMusic:function(){
+    playMusic:function() {  
       if (!this.data.playing){
         backgroundAudioManager.src = this.properties.src
       }else{
@@ -33,6 +33,19 @@ Component({
       this.setData({
         playing: !this.data.playing
       })
+    },
+    _resertStatus:function(){
+      if (!backgroundAudioManager.pause){
+        this.setData({
+          playing: false
+        })
+        return
+      }
+      if (this.properties.src == backgroundAudioManager.src){
+        this.setData({
+          playing: true
+        })
+      }
     }
   }
 })

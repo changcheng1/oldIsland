@@ -14,10 +14,10 @@
 </view>
 
 <view class="shareContainer">
-<view class="shareImg"  bindtap="catchLike">
-     <image src="{{like?likeSrc:nolikeSrc}}"></image>
-     <text>{{count}}</text>
-</view>
+    <view class="shareImg"  bindtap="catchLike">
+      <image src="{{like?likeSrc:nolikeSrc}}"></image>
+       <text>{{count}}</text>
+    </view>
     <image src="./images/分享@2x.png" bindtap="share" ></image>  
 </view>
 </view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tag": "/components/tag/tag",
+    "v-redlike":"/components/redLike/redLike"
+  }
+}

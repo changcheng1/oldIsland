@@ -1,0 +1,10 @@
+var regTest = function(detail){
+  if(!detail){
+    return
+  }
+  var regExp = getRegExp("\\\\n",'g')
+  return detail.replace(regExp,'\n&nbsp;&nbsp;&nbsp;')
+}
+module.exports = {
+  regTest: regTest
+}

@@ -1,0 +1,63 @@
+<wxs src="../../util/util.wxs" module="util" />
+<view class="container">
+    <view class="head">
+        <image src="{{book.image}}"></image>
+        <text class='title'>{{book.title}}</text>
+        <text class='author'>{{book.author}}</text>
+    </view>
+    <view class="sub-container">
+      <text class="headline">短评</text>
+      <view class="comment-container">
+          <block wx:for="{{comments}}" wx:key="content">
+             <tag text="{{item.content}}" my-class="{{checkType.tagClass(index)}}">
+               <text slot="after">{{'+'+item.nums}}</text>
+             </tag>
+           </block>
+      </view>
+    </view>
+     <view class="sub-container">
+        <text class="headline">内容简介</text>
+        <text class="content" decode="{{true}}">{{util.regTest(book.summary)}}</text>
+    </view>
+    <view class="sub-container">
+        <text class="headline">书本信息</text>
+        <view class="detail-container">
+            <view class="vertical description">
+                <text>出版社</text>
+                <text>出版年</text>
+                <text>页数</text>
+                <text>定价</text>
+                <text>装帧</text>
+            </view>
+            <view class="vertical">
+                <text>{{book.publisher}}</text>
+                <text>{{book.pubdate}}</text>
+                <text>{{book.pages}}</text>
+                <text>{{book.price}}</text>
+                <text>{{book.binding}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="post-container" hidden="{{posting}}">
+      <view bind:tap="onFakePost" class="post-fake">
+          <text>输入短评</text>
+      </view>
+      <view class="like-container">
+          <v-redlike count="{{likeCount}}" bindlike="iLike" like="{{likeStatus}}"/>
+      </view>
+</view>
+  </view>
+<wxs module="checkType">
+  var tagClass = function(index){
+    if(index == 0){
+      return 'tagOne'
+    }
+    if(index == 1){
+      return 'tagTwo'
+    }
+    return ""
+  }
+  module.exports = {
+    tagClass:tagClass
+  }
+</wxs>

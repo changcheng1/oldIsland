@@ -2,7 +2,7 @@ import {Http} from '../util/http.js'
 class classicModel extends Http {
   getLatest(){
     return new Promise((resolve,reject)=>{
-      super.wxRequest({ "url": '/classic/latest' }).then((response) => {
+      super.wxRequest( '/classic/latest').then((response) => {
         resolve(response.data)
       })
     })
@@ -12,7 +12,7 @@ class classicModel extends Http {
     let current = currentName == 'next' ? wx.getStorageSync('class-' + (currentIndex + 1)) : wx.getStorageSync('class-' + (currentIndex -1))    
     if (!current){
       return new Promise((resolve, reject) => {
-        super.wxRequest({ "url": '/classic/' + index + '/' + currentName }).then((response) => {
+        super.wxRequest('/classic/' + index + '/' + currentName ).then((response) => {
           resolve(response.data)
           wx.setStorageSync('class-' + currentIndex, response.data)
         })

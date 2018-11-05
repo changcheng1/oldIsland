@@ -1,0 +1,8 @@
+.shareImg image{
+  width:32rpx;
+  height:28rpx;
+}
+.shareImg text{
+  position: relative;
+  bottom:20rpx;
+}
