@@ -8,8 +8,8 @@
     <view class="sub-container">
       <text class="headline">短评</text>
       <view class="comment-container">
-          <block wx:for="{{comments}}" wx:key="content">
-             <tag text="{{item.content}}" my-class="{{checkType.tagClass(index)}}">
+          <block wx:for="{{util.limit(comments,10)}}" wx:key="content">
+             <tag text="{{item.content}}" my-class="{{checkType.tagClass(index,10)}}">
                <text slot="after">{{'+'+item.nums}}</text>
              </tag>
            </block>
@@ -39,14 +39,30 @@
         </view>
     </view>
     <view class="post-container" hidden="{{posting}}">
-      <view bind:tap="onFakePost" class="post-fake">
+      <view bind:tap="onFakePost" class="post-fake" bindtap='onFakePost'>
           <text>输入短评</text>
       </view>
       <view class="like-container">
           <v-redlike count="{{likeCount}}" bindlike="iLike" like="{{likeStatus}}"/>
       </view>
-</view>
+    </view>
   </view>
+  <v-mask  wx:if="{{posting}}"/>
+<view class="posting-container" wx:if="{{posting}}">
+    <view class="post-header">
+        <text wx:if="{{comments.length}}">仅可点击标签+1</text>
+        <text wx:else>暂无短评</text>
+        <text bind:tap="onCancel" class="cancel">取消</text>
+    </view>
+    <view class="comment-container">
+        <block wx:for="{{util.limit(comments, 3)}}" wx:key="content">
+           <tag text="{{item.content}}" my-class="{{checkType.tagClass(index,10)}}">
+               <text slot="after">{{'+'+item.nums}}</text>
+             </tag>
+        </block>
+    </view>
+    <input bindconfirm="onPost" class="post" placeholder='短评最多12个字'></input>
+</view>
 <wxs module="checkType">
   var tagClass = function(index){
     if(index == 0){

@@ -38,6 +38,11 @@ Page({
     })
     
   },
+  onFakePost(){
+    this.setData({
+      posting:true
+    })
+  },
   iLike: function (event) {
     const like_or_cancel = event.detail.behavior
     LikeModel.getLatest(like_or_cancel, this.data.id, 400)
