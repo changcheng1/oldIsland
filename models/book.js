@@ -27,6 +27,16 @@ class bookModel extends Http {
       `book/${bid}/detail`
     )
   }
+  postComment(bid,comment){
+    return super.wxRequest(
+      'book/add/short_comment',
+      {
+        book_id:bid,
+        content:comment
+      },
+      'POST',
+    )
+  }
 }
 export {
   bookModel

@@ -43,6 +43,40 @@ Page({
       posting:true
     })
   },
+  onCancel(){
+    this.setData({
+      posting: false
+    })
+  },
+  topPost(event){
+    console.log(event)
+    const text = event.detail.text || event.detail.value;
+    const bid = this.data.book.id
+    if(text.length>12){
+      wx.showToast({
+        title: '短评最多12个字',
+        icon:'none'
+      })
+      return
+    }
+    BookModel.postComment(bid,text).then(data=>{
+      console.log(data)
+      wx.showToast({
+        title: '+ 1',
+        icon: "none"
+      })
+      this.data.comments.unshift({
+        content: text,
+        nums: 1
+      })
+
+      this.setData({
+        comments: this.data.comments,
+        posting: false
+      })
+    })
+    
+  },
   iLike: function (event) {
     const like_or_cancel = event.detail.behavior
     LikeModel.getLatest(like_or_cancel, this.data.id, 400)

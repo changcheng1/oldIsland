@@ -61,10 +61,6 @@
 .tagTwo{
   background-color: #eefbff !important;
 }
-.comment-container tag {
-    margin-right: 15rpx;
-    margin-bottom: 10rpx;
-}
 .detail-container {
     width: 100%;
     display: flex;

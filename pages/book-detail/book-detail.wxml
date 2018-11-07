@@ -56,12 +56,12 @@
     </view>
     <view class="comment-container">
         <block wx:for="{{util.limit(comments, 3)}}" wx:key="content">
-           <tag text="{{item.content}}" my-class="{{checkType.tagClass(index,10)}}">
+           <tag text="{{item.content}}" my-class="{{checkType.tagClass(index,10)}}" bind:onTap="topPost">
                <text slot="after">{{'+'+item.nums}}</text>
              </tag>
         </block>
     </view>
-    <input bindconfirm="onPost" class="post" placeholder='短评最多12个字'></input>
+    <input bind:confirm="topPost" class="post" placeholder='短评最多12个字'></input>
 </view>
 <wxs module="checkType">
   var tagClass = function(index){

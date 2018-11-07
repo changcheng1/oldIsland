@@ -8,4 +8,6 @@
     align-items: center;
     justify-content: center;
     font-size: 28rpx;
+    margin-right:15rpx;
+    margin-bottom:10rpx;
 }
